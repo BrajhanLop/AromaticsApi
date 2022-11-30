@@ -3,7 +3,9 @@
 const express = require('express')
 const { db } =  require('./utils/database')
 const { plantasRouter } = require('./routes/plantas.routes')
+const dotenv = require('dotenv');
 
+dotenv.config({ path: './config.env' });
 // 02. inicializar espress
 const app = express();
 
@@ -18,6 +20,8 @@ db.authenticate()
 db.sync()
 .then(()=> console.log('sync correcta'))
 .catch(()=> console.log('error'))
+
+const PORT = process.env.PORT || 5000;
 
 app.listen(5000, ()=>{
     console.log('bienvenido a mi servidor');
