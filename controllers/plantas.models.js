@@ -11,6 +11,26 @@ const getAllPlants = async(req, res) => {
     })
 }
 
+
+const getPlantsByID = async(req, res) => {
+ const { id } = req.params;
+
+const plantsbyid = await plantas.findOne({ where: {id} })
+
+if (!plantsbyid) {
+    return res.status(404).json({
+        status: 'error',
+        message: 'plant not found'
+    })
+}
+
+res.status(200).json({
+    plantsbyid
+})
+
+}
+
+
 const createPlantas = async (req, res) => {
 
 const { nombre, descripcion1, descripcion2, cultivo, siembra, apto, exigencia, status} = req.body;
@@ -22,4 +42,4 @@ res.status(201).json({
 })
 }
 
-module.exports = {getAllPlants, createPlantas}
+module.exports = {getAllPlants, createPlantas, getPlantsByID}
