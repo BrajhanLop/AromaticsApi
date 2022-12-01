@@ -11,6 +11,10 @@ const plantas = db.define('plantas',{
         type: DataTypes.STRING,
         allowNull: false
     },
+    imagen:{
+        type: DataTypes.STRING,
+        allowNull: false
+    },
     descripcion1: {
         type: DataTypes.STRING,
         allowNull: false

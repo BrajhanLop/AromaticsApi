@@ -33,9 +33,9 @@ res.status(200).json({
 
 const createPlantas = async (req, res) => {
 
-const { nombre, descripcion1, descripcion2, cultivo, siembra, apto, exigencia, status} = req.body;
+const { nombre, imagen,  descripcion1, descripcion2, cultivo, siembra, apto, exigencia, status} = req.body;
 
-const nuevaPlanta = await plantas.create({nombre, descripcion1, descripcion2, cultivo, siembra,apto, exigencia,status  })
+const nuevaPlanta = await plantas.create({nombre, imagen,  descripcion1, descripcion2, cultivo, siembra,apto, exigencia,status  })
 
 res.status(201).json({
     nuevaPlanta 
