@@ -3,9 +3,9 @@
 const express = require('express')
 const { db } =  require('./utils/database')
 const { plantasRouter } = require('./routes/plantas.routes')
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 
-dotenv.config({ path: './config.env' });
+// dotenv.config({ path: './config.env' });
 // 02. inicializar espress
 const app = express();
 
